@@ -7,6 +7,7 @@ const portfolioRoutes = require('./routes/portfolios')
 // server.get('/test', (req, res) => {     return res.json({message: 'test is
 // working!'}); })
 
+// Synchronizes connection to DB and server listening on port
 async function runServer() {
     
    await connect();
