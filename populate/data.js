@@ -3,34 +3,34 @@
 const data = {
     portfolios: [
         {
-          title: 'Job in Netcentric',
-          company: 'Netcentric',
-          companyWebsite: 'www.google.com',
-          location: 'Spain, Barcelona',
+          title: 'School Contribution',
+          company: 'Florida International University',
+          companyWebsite: 'https://webserver.cis.fiu.edu/',
+          location: 'Florida, United Atates',
           jobTitle: 'Engineer',
-          description: 'Doing something, programing....',
-          startDate: '01/01/2014',
-          endDate: '01/01/2016'
+          description: 'Reviewed papers and articles prior to submission',
+          startDate: '10/04/2016',
+          endDate: '11/06/2016'
         },
         {
-          title: 'Job in Siemens',
-          company: 'Siemens',
-          companyWebsite: 'www.google.com',
-          location: 'Slovakia, Kosice',
-          jobTitle: 'Software Engineer',
-          description: 'Responsoble for parsing framework for JSON medical data.',
-          startDate: '01/01/2011',
-          endDate: '01/01/2013'
+          title: 'Internship',
+          company: 'Accelirate',
+          companyWebsite: 'https://www.accelirate.com/',
+          location: 'Florida, United States',
+          jobTitle: 'Automation Engineer Intern',
+          description: 'Was trained in Ui-Path platform. Automised backoffice repetetive tasks',
+          startDate: '05/08/2019',
+          endDate: '07/20/2019'
         },
         {
-          title: 'Work in USA',
-          company: 'WhoKnows',
-          companyWebsite: 'www.google.com',
-          location: 'USA, Montana',
-          jobTitle: 'Housekeeping',
-          description: 'So much responsibility....Overloaaaaaad',
-          startDate: '01/01/2010',
-          endDate: '01/01/2011'
+          title: 'Professional Experience',
+          company: 'SmartsAid',
+          companyWebsite: 'https://play.google.com/store/apps/details?id=com.mehdi.smartsaid&hl=en_US',
+          location: 'Florida, United States',
+          jobTitle: 'Software Developer',
+          description: 'Designed and developed the SmartsAid app',
+          startDate: '05/20/2018',
+          endDate: '02/01/2020'
         }
       ]
 }

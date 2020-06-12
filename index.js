@@ -1,6 +1,7 @@
 const express = require('express');
 const server = express();
 const {connect} = require('./db');
+const bodyParser = require('body-parser');
 
 const portfolioRoutes = require('./routes/portfolios')
 
@@ -11,6 +12,8 @@ const portfolioRoutes = require('./routes/portfolios')
 async function runServer() {
     
    await connect();
+
+   server.use(bodyParser.json());
    server.use('/api/v1/portfolios', portfolioRoutes);
    
    const PORT = parseInt(process.env.PORT, 10) || 3001;

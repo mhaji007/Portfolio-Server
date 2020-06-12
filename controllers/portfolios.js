@@ -1,3 +1,5 @@
+// Endpoint responsible for communicating with the database
+
 const mongoose = require('mongoose');
 const Portfolio = mongoose.model('Portfolio');
 
@@ -18,4 +20,11 @@ exports.getPortfolioById = async (req, res) => {
     } catch(error) {
         return res.status(422).send(error.message);
     }
+}
+
+
+exports.createPortfolio = async (req, res) => {
+    const data = req.body;
+    console.log(data);
+    return res.json({message: 'Creating Portfolio ...'});
 }
