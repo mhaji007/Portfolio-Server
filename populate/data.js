@@ -9,6 +9,7 @@ const data = {
           location: 'Florida, United Atates',
           jobTitle: 'Engineer',
           description: 'Reviewed papers and articles prior to submission',
+          userId: 'auth0|5ed95170a36eb2001976617a',
           startDate: '10/04/2016',
           endDate: '11/06/2016'
         },
@@ -19,6 +20,7 @@ const data = {
           location: 'Florida, United States',
           jobTitle: 'Automation Engineer Intern',
           description: 'Was trained in Ui-Path platform. Automised backoffice repetetive tasks',
+          userId: 'auth0|5ed95170a36eb2001976617a',
           startDate: '05/08/2019',
           endDate: '07/20/2019'
         },
@@ -29,6 +31,7 @@ const data = {
           location: 'Florida, United States',
           jobTitle: 'Software Developer',
           description: 'Designed and developed the SmartsAid app',
+          userId: 'auth0|5ed95170a36eb2001976617a',
           startDate: '05/20/2018',
           endDate: '02/01/2020'
         }

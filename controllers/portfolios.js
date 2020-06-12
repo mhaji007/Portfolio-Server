@@ -24,7 +24,19 @@ exports.getPortfolioById = async (req, res) => {
 
 
 exports.createPortfolio = async (req, res) => {
-    const data = req.body;
-    console.log(data);
-    return res.json({message: 'Creating Portfolio ...'});
+    const portfolioData = req.body;
+    //TODO: Extract from req
+    const userId = 'auth0|5ed95170a36eb2001976617a';
+    // Make an instance of the Portfolio model using portfolio data
+    const portfolio = new Portfolio(portfolioData);
+    
+    portfolio.userId = userId;
+    
+    try {
+        const newPortfolio = await portfolio.save();
+        return res.json(newPortfolio);
+    } catch(error) {
+        return res.status(422).send(error.message);
+    }
+  
 }
