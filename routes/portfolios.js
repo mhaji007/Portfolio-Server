@@ -6,9 +6,10 @@ const express = require('express');
 const router = express.Router();
 const {checkJwt} = require('../controllers/auth');
 const {getPortfolios,
-     getPortfolioById,
+       getPortfolioById,
       createPortfolio,
-      updatePortfolio } = require('../controllers/portfolios');
+      updatePortfolio,
+      deletePortfolio } = require('../controllers/portfolios');
 
 router.get('', getPortfolios);
 router.get('/:id', getPortfolioById);
@@ -17,5 +18,7 @@ router.get('/:id', getPortfolioById);
 router.post('', checkJwt, createPortfolio)
 
 router.patch('/:id', updatePortfolio);
+
+router.delete('/:id', checkJwt, deletePortfolio);
 
 module.exports = router;
