@@ -1,5 +1,6 @@
 const jwt = require('express-jwt');
 const jwksRa = require('jwks-rsa');
+const config = require('../config/dev');
 
 // Authentication middleware
 // Checks access token in 
@@ -19,3 +20,13 @@ exports.checkJwt = jwt({
     issuer:'https://mhaji007.auth0.com/',
     algorithms:['RS256']
 });
+// middleware to check for admin rights
+exports.checkRole = role => (req, res, next) => {
+    const user = req.user;
+  
+    if (user && user[config.AUTH0_NAMESPACE + '/roles'].includes(role)) {
+      next();
+    } else {
+      return res.status(401).send('You are not authorized to access this resource!')
+    }
+  }
