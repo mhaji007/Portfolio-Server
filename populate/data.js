@@ -35,6 +35,32 @@ const data = {
           startDate: '05/20/2018',
           endDate: '02/01/2020'
         }
+      ],
+      blogs: [
+        {
+          slug: 'my-first-blog',
+          title: 'My First Blog',
+          subTitle: 'It was chilly winter day...',
+          content: '<p>Some very nice content</p>',
+          userId: 'auth0|5ed95170a36eb2001976617a',
+          status: 'published'
+        },
+        {
+          slug: 'my-second-blog',
+          title: 'My Second Blog',
+          subTitle: 'It was hot summer day...',
+          content: '<p>Some very nice content</p>',
+          userId: 'auth0|5ed95170a36eb2001976617a',
+          status: 'published'
+        },
+        {
+          slug: 'my-third-blog',
+          title: 'My Third Blog',
+          subTitle: 'It was rainy spring day...',
+          content: '<p>Some very nice content</p>',
+          userId: 'auth0|5ed95170a36eb2001976617a',
+          status: 'published'
+        }
       ]
 }
 
