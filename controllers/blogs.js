@@ -35,3 +35,16 @@ exports.getBlogBySlug = async (req, res) => {
             .send(error.message);
     }
 }
+
+exports.createBlog = async (req, res) => {
+    const blogData = req.body;
+    blogData.userId = req.user.sub;
+    const blog = new Blog(blogData);
+  
+    try {
+      const createdBlog = await blog.save();
+      return res.json(createdBlog);
+    } catch(e) {
+      return res.status(422).send(e);
+    }
+  }
