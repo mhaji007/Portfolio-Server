@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const blogSchema = new Schema({
+  // Readable unique identifiers
   slug: { type: String, unique: true, sparse: true},
   title: { type: String, required: true, maxlength: 96},
   subTitle: { type: String, required: true },
