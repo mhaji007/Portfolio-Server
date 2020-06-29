@@ -45,7 +45,7 @@ exports.createBlog = async (req, res) => {
       const createdBlog = await blog.save();
       return res.json(createdBlog);
     } catch(e) {
-      return res.status(422).send(e);
+      return res.status(422).send(err.message);
     }
   }
 
