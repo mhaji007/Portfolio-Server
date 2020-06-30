@@ -14,6 +14,19 @@ exports.getBlogs = async (req, res) => {
     }
 }
 
+exports.getBlogsByUser = async (req, res) => {
+    const userId = req.user.sub;
+    try {
+        const blogs = await Blog
+            .find({userId})
+        return res.json(blogs);
+    } catch (error) {
+        return res
+            .status(422)
+            .send(error.message);
+    }
+}
+
 exports.getBlogById = async (req, res) => {
     try {
         const blog = await Blog.findById(req.params.id);
