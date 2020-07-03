@@ -1,4 +1,5 @@
 const slugify = require('slugify');
+const uniqueSlug = require('unique-slug');
 const mongoose = require('mongoose');
 const Blog = mongoose.model('Blog');
 
@@ -19,7 +20,9 @@ exports.getBlogsByUser = async (req, res) => {
     const userId = req.user.sub;
     try {
         const blogs = await Blog
-            .find({userId})
+            .find({userId,
+            status:{$in: ['draft', 'published']}
+            });
         return res.json(blogs);
     } catch (error) {
         return res
@@ -62,7 +65,20 @@ exports.createBlog = async (req, res) => {
       return res.status(422).send(err.message);
     }
   }
-
+  const _saveBlog = async blog => {
+    try {
+      const createdBlog = await blog.save();
+      return createdBlog;
+    } catch(e) {
+      if (e.code === 11000 && e.keyPattern && e.keyPattern.slug) {
+        blog.slug += `-${uniqueSlug()}`;
+        return _saveBlog(blog);
+      }
+  
+      throw(e);
+    }
+  }
+  
 
   exports.updateBlog = async (req, res) => {
     const { body, params: {id}} = req;
@@ -89,7 +105,8 @@ exports.createBlog = async (req, res) => {
       blog.updateAt = new Date();
   
       try {
-        const updatedBlog = await blog.save();
+        const updatedBlog = await _saveBlog(blog);
+
         return res.json(updatedBlog);
       } catch(err) {
         return res.status(422).send(err.message);
