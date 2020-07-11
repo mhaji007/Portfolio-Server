@@ -1,7 +1,7 @@
 const jwt = require('express-jwt');
 const jwksRa = require('jwks-rsa');
 const request = require('request');
-const config = require('../config/dev');
+const config = require('../config');
 
 // Authentication middleware
 // Checks access token in 
