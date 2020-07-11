@@ -16,6 +16,10 @@ async function runServer() {
    server.use(bodyParser.json());
    server.use('/api/v1/portfolios', portfolioRoutes);
    server.use('/api/v1/blogs', require('./routes/blogs'));
+
+   server.get('', (req, res) => {
+       res.sendFile('index.html', {root: __dirname})
+   })
    
    const PORT = parseInt(process.env.PORT, 10) || 3001;
    server.listen(PORT, (err) => {
